@@ -1,0 +1,23 @@
+import pytest
+from app import app
+
+@pytest.fixture
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+def test_health_returns_200(client):
+    response = client.get('/health')
+    assert response.status_code == 200
+    assert response.get_json()['status'] == 'UP'
+
+def test_version_returns_200(client):
+    response = client.get('/version')
+    assert response.status_code == 200
+    assert 'version' in response.get_json()
+
+def test_environment_returns_200(client):
+    response = client.get('/environment')
+    assert response.status_code == 200
+    assert 'environment' in response.get_json()
