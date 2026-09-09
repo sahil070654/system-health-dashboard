@@ -41,7 +41,7 @@ pipeline {
         stage('Health Check') {
             steps {
                 bat "docker run -d -p 5001:5000 -e APP_ENV=ci --name health-check-container %IMAGE_TAG%"
-                bat 'ping -n 6 127.0.0.1 > nul'
+                bat 'timeout /t 5 /nobreak'
                 bat 'curl -f http://localhost:5001/health'
                 bat 'docker stop health-check-container'
                 bat 'docker rm health-check-container'
