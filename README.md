@@ -1,4 +1,4 @@
-# system-health-dashboard
+# System-Health-Dashboard
 
 A lightweight REST API built for an operations team to expose basic system status information. The project covers the full delivery workflow — Git branching, automated testing, containerisation, and a Jenkins CI pipeline.
 
