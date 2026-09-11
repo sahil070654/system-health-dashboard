@@ -1,3 +1,5 @@
+<img width="1500" height="677" alt="image" src="https://github.com/user-attachments/assets/4747e874-ba83-4108-9004-1274f648c689" />
+
 # System-Health-Dashboard
 
 A lightweight REST API built for an operations team to expose basic system status information. The project covers the full delivery workflow — Git branching, automated testing, containerisation, and a Jenkins CI pipeline.
